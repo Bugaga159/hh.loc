@@ -2,6 +2,7 @@
 
 namespace Casino\Controllers;
 
+use Casino\Models\Subjects\Subject;
 use Casino\Models\Users\User;
 use Casino\View\View;
 
@@ -18,7 +19,8 @@ class MainController
     public function main()
     {
         $idUser = 1;
-        $user = User::findAll();
+        $user = User::getById($idUser);
+        $subjects = Subject::findAll();
 
         if ($user === []) {
             $this->view->renderHtml('errors/404.php', [], 404);
@@ -29,11 +31,10 @@ class MainController
     	if(!empty($_POST) and $_POST['prize'] == 'Play'){
     		$prizes = ['Money', 'Point', 'Subject'];
     		$numberPrize = rand(0,2);
-    		$subjects = ['Car', 'House', 'iPhone'];
     		switch ($prizes[$numberPrize]) {
     			case 'Subject':
-    				$numberSubject = rand(0,2);
-    				$number = $subjects[$numberSubject];
+    				$numberSubject = rand(0,count($subjects)-1);
+    				$number = $subjects[$numberSubject]->getTitle();
     				break;
     			case 'Money':
     				$number = rand(50,300) . '$';
@@ -44,7 +45,7 @@ class MainController
  			      }
 
   	     }
-        $this->view->renderHtml('main/main.php', ['userId' => $user[0], 'number' => $number]);
+        $this->view->renderHtml('main/main.php', ['userId' => $user, 'number' => $number]);
 
     }
 }

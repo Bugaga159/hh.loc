@@ -1,22 +1,21 @@
 <?php
 
-namespace Casino\Models\Subjects;
+namespace Casino\Models\Levels;
 
 use Casino\Models\ActiveRecordEntity;
-
-class Subject extends ActiveRecordEntity
+class Level extends ActiveRecordEntity
 {
     private $title;
-    private $amount;
+    private $coefficient;
 
     public function getTitle(): string
     {
         return $this->title;
     }
 
-    public function getAmount(): int
+    public function getCoefficient(): int
     {
-        return $this->amount;
+        return $this->coefficient;
     }
 
     protected static function getTableName(): string
