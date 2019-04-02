@@ -22,7 +22,7 @@ class MainController
         $user = User::getById($idUser);
         $subjects = Subject::findAll();
 
-        if ($user === []) {
+        if ($user === null or $subjects === null) {
             $this->view->renderHtml('errors/404.php', [], 404);
             return;
         }
@@ -33,8 +33,8 @@ class MainController
     		$numberPrize = rand(0,2);
     		switch ($prizes[$numberPrize]) {
     			case 'Subject':
-    				$numberSubject = rand(0,count($subjects)-1);
-    				$number = $subjects[$numberSubject]->getTitle();
+    				$numberSubject = rand(0, count($subjects)-1);
+    				$number = '1 ' . $subjects[$numberSubject]->getTitle();
     				break;
     			case 'Money':
     				$number = rand(50,300) . '$';
