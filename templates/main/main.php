@@ -50,8 +50,11 @@
 
 <div class="container">
 	<div>
-		<h1>Welcome to the casino</h1>
-    <h1><?= $number ?></h1>
+        <h1>Welcome to the casino <?= $userId->getNikename() ?></h1>
+        <p>You have $<?= $userId->getMoney()?> and point <?= $userId->getPoints()?>.</p>
+        <?php if($number != null): ?>
+    <h1>You win <?= $number ?></h1>
+        <?php endif; ?>
     <form action="" method="POST">
       <button type="submite" class="btn btn-success btn-lg" name='prize' value="Play">Play</button>
     </form>
