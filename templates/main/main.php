@@ -50,7 +50,7 @@
 
 <div class="container">
 	<div>
-        <h1>Welcome to the casino <?= $userId->getNikename() ?></h1>
+        <h1>Welcome to the casino <a href="/user"><?= $userId->getNikename() ?></a></h1>
         <p>You have $<?= $userId->getMoney()?> and point <?= $userId->getPoints()?>.</p>
         <?php if($number != null): ?>
     <h1>You win <?= $number ?></h1>
