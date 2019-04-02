@@ -17,12 +17,20 @@ abstract class ActiveRecordEntity
         return $this->id;
     }
 
+    /**
+     * @param string $name
+     * @param $value
+     */
     public function __set(string $name, $value)
     {
         $camelCaseName = $this->underscoreToCamelCase($name);
         $this->$camelCaseName = $value;
     }
 
+    /**
+     * @param string $source
+     * @return string
+     */
     private function underscoreToCamelCase(string $source): string
     {
         return lcfirst(str_replace('_', '', ucwords($source, '_')));
@@ -33,7 +41,7 @@ abstract class ActiveRecordEntity
      */
     public static function findAll(): array
     {
-        $db = new Db();
+        $db = Db::getInstance();
         return $db->query('SELECT * FROM `' . static::getTableName() . '`;', [], static::class);
     }
 
@@ -45,7 +53,7 @@ abstract class ActiveRecordEntity
     */
     public static function getById(int $id): ?self
     {
-        $db = new Db();
+        $db = Db::getInstance();
         $entities = $db->query(
             'SELECT * FROM `' . static::getTableName() . '` WHERE id=:id;',
             [':id' => $id],

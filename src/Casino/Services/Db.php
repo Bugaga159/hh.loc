@@ -6,7 +6,13 @@ class Db
 {
     /** @var \PDO */
     private $pdo;
-
+    /**
+     * @var
+     */
+    private static $instance;
+    /**
+     * Db constructor.
+     */
     public function __construct()
     {
         $dbOptions = (require __DIR__ . '/../../settings.php')['db'];
@@ -19,6 +25,12 @@ class Db
         $this->pdo->exec('SET NAMES UTF8');
     }
 
+    /**
+     * @param string $sql
+     * @param array $params
+     * @param string $className
+     * @return array|null
+     */
     public function query(string $sql, array $params = [], string $className = 'stdClass'): ?array
     {
         $sth = $this->pdo->prepare($sql);
@@ -29,6 +41,18 @@ class Db
         }
 
         return $sth->fetchAll(\PDO::FETCH_CLASS, $className);
+    }
+
+    /**
+     * @return Db
+     */
+    public static function getInstance(): self
+    {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
     }
     
 }

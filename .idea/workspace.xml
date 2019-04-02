@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1888485-d7c5-44cb-a342-ee4a8dad251a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Casino/Controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Casino/Controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Casino/Models/Subjects/Subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Casino/Models/Subjects/Subject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Casino/Models/ActiveRecordEntity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Casino/Models/ActiveRecordEntity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Casino/Services/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Casino/Services/Db.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,19 +22,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Casino/Services/Db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+            <state relative-caret-position="216">
+              <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Casino/Controllers/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
+            <state relative-caret-position="369">
               <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="e#38#73#0#PHP" expanded="true" />
@@ -82,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Casino/Models/ActiveRecordEntity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="52" column="10" lean-forward="true" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
+            <state relative-caret-position="454">
+              <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -102,14 +102,14 @@
         <option value="$PROJECT_DIR$/templates/error/404.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/templates/errors/404.php" />
-        <option value="$PROJECT_DIR$/src/Casino/Services/Db.php" />
         <option value="$PROJECT_DIR$/templates/main/main.php" />
         <option value="$PROJECT_DIR$/src/Casino/Models/Users/User.php" />
-        <option value="$PROJECT_DIR$/src/Casino/Models/ActiveRecordEntity.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Casino/Models/Subjects/Subject.php" />
         <option value="$PROJECT_DIR$/src/Casino/Models/Levels/Level.php" />
         <option value="$PROJECT_DIR$/src/Casino/Controllers/MainController.php" />
+        <option value="$PROJECT_DIR$/src/Casino/Models/ActiveRecordEntity.php" />
+        <option value="$PROJECT_DIR$/src/Casino/Services/Db.php" />
       </list>
     </option>
   </component>
@@ -165,14 +165,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Casino" type="462c0819:PsiDirectoryNode" />
               <item name="Models" type="462c0819:PsiDirectoryNode" />
-              <item name="Levels" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="casino.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="casino.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Casino" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
               <item name="Subjects" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -182,6 +174,20 @@
               <item name="Casino" type="462c0819:PsiDirectoryNode" />
               <item name="Models" type="462c0819:PsiDirectoryNode" />
               <item name="Users" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="casino.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="casino.loc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Casino" type="462c0819:PsiDirectoryNode" />
+              <item name="Services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="casino.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="casino.loc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Casino" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -220,12 +226,12 @@
       <option name="presentableId" value="Default" />
       <updated>1554139963868</updated>
       <workItem from="1554139964986" duration="3733000" />
-      <workItem from="1554222545089" duration="9487000" />
+      <workItem from="1554222545089" duration="10422000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13220000" />
+    <option name="totallyTimeSpent" value="14155000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -291,13 +297,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Casino/Services/Db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/main/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -326,13 +325,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Casino/Models/ActiveRecordEntity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="52" column="10" lean-forward="true" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Casino/Models/Levels/Level.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -342,11 +334,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Casino/Controllers/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
+        <state relative-caret-position="369">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#38#73#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Casino/Models/ActiveRecordEntity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Casino/Services/Db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
         </state>
       </provider>
     </entry>
