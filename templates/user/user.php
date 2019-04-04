@@ -59,7 +59,7 @@
 
         <div class="conf">
             <header class="page-header">
-                <h1 class="page-title">John Doe</h1>
+                <h1 class="page-title"><?= $user->getNikename() ?></h1>
                 <small> <i class="fa fa-clock-o"></i> Last Updated on: <time> April 02, 2019</time></small>
             </header>
             <div class="row">
@@ -113,11 +113,11 @@
 
                                     <div class="col-xs-12 col-sm-8">
                                         <ul class="list-group">
-                                            <li class="list-group-item">John Doe</li>
-                                            <li class="list-group-item">Level -  </li>
-                                            <li class="list-group-item">Money: 1233</li>
-                                            <li class="list-group-item">Points: 1233</li>
-                                            <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
+                                            <li class="list-group-item"><?= $user->getNikename() ?></li>
+                                            <li class="list-group-item">Level - <?= $user->getLevel() ?> </li>
+                                            <li class="list-group-item">Money: <?= $user->getMoney() ?></li>
+                                            <li class="list-group-item">Points: <?= $user->getPoints() ?></li>
+                                            <li class="list-group-item"><i class="fa fa-envelope"></i> <?= $user->getEmail() ?></li>
                                         </ul>
                                     </div>
                                 </div>
