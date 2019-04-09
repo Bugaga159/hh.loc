@@ -2,6 +2,7 @@
 
 namespace Casino\Controllers;
 
+use Casino\Models\Levels\Level;
 use Casino\Models\Users\User;
 use Casino\View\View;
 
@@ -31,29 +32,48 @@ class UsersController
     }
     public function userInfo()
     {
-        $this->view->renderHtml('user/user.php', ['user' => $this->user]);
+        $levelUser = Level::getById($this->user->getLevel());
+
+        $this->view->renderHtml('user/user.php', ['user' => $this->user, 'levelUser' => $levelUser]);
     }
 
     public function convertMoney()
     {
-        if(!empty($_POST['point'])){
-            $moneyConvert = $_POST['point'] + $this->user->getPoints();
+        $levelUser = Level::getById($this->user->getLevel());
+
+        if(!empty($_POST['point']) and $this->user->getMoney() >= $_POST['point']){
+            $pointsConvert = (int)($_POST['point'] * $levelUser->getCoefficient()) + $this->user->getPoints();
+            $moneyConvert = ($this->user->getMoney() - $_POST['point']);
+            $userConf = User::getById($this->userId);
+
+            if($userConf === null){
+                $this->view->renderHtml('errors/404.php', [], 404);
+                return;
+            }
+
+            $userConf->setMoney($moneyConvert);
+            $userConf->setPoints($pointsConvert);
+            $userConf->save();
+            unset($_POST['point']);
+            $this->view->renderHtml('user/convert.php', ['user' => $this->user, 'levelUser' => $levelUser]);
         }else{
-            $moneyConvert = $this->user->getPoints();
+            $this->view->renderHtml('user/convert.php', ['user' => $this->user, 'levelUser' => $levelUser]);
         }
 
-        $this->view->renderHtml('user/convert.php', ['user' => $this->user, 'moneyConvert'=> $moneyConvert]);
+
     }
 
     public function edit(int $userId): void
     {
-        $userConf = User::getById($userId);
+        $userConf = User::getById($this->userId);
         if($userConf === null){
             $this->view->renderHtml('errors/404.php', [], 404);
             return; 
         }
 
         $userConf->setNikename('Admin');
+        $userConf->setMoney(1000);
+        $userConf->setPoints(100);
         $userConf->save();
     }
 }

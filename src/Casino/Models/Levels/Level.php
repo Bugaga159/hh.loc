@@ -13,13 +13,13 @@ class Level extends ActiveRecordEntity
         return $this->title;
     }
 
-    public function getCoefficient(): int
+    public function getCoefficient(): float
     {
         return $this->coefficient;
     }
 
     protected static function getTableName(): string
     {
-        return 'subjects';
+        return 'levels';
     }
 }

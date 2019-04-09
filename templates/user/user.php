@@ -107,14 +107,15 @@
                                     <div class="col-xs-12 col-sm-8">
                                         <ul class="list-group">
                                             <li class="list-group-item"><?= $user->getNikename() ?></li>
-                                            <li class="list-group-item">Level - <?= $user->getLevel() ?> </li>
+                                            <li class="list-group-item">Level - <?= $levelUser->getTitle() ?> </li>
                                             <li class="list-group-item">Money: <?= $user->getMoney() ?>
-                                                <?php if($user->getMoney() == 0):  ?>
+                                                <?php if($user->getMoney() > 0):  ?>
                                                     <a class="btn btn-outline-success" href="/convert">Convert</a>
                                                 <?php endif; ?>
                                             </li>
                                             <li class="list-group-item">Points: <?= $user->getPoints() ?></li>
                                             <li class="list-group-item"><i class="fa fa-envelope"></i> <?= $user->getEmail() ?></li>
+                                            <li class="list-group-item"><i class="fa fa-envelope"></i><a class="btn btn-outline-warning" href="/">Back</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -126,7 +127,7 @@
 
                 </div>
             </div>
-            <a class="btn btn-outline-warning" href="/">Back</a>
+
         </div>
 
     <?php include __DIR__ . '/../footer.php'; ?>

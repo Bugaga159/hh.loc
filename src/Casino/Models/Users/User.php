@@ -62,4 +62,13 @@ class User extends ActiveRecordEntity
     	return $this->nikename = $newNikename;
     }
 
+    public function setMoney(int $money): int
+    {
+        return $this->money = $money;
+    }
+
+    public function setPoints(int $points): int
+    {
+        return $this->points = $points;
+    }
 }

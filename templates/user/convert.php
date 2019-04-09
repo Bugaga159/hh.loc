@@ -108,14 +108,15 @@
                                     <div class="col-xs-12 col-sm-8">
                                         <ul class="list-group">
                                             <li class="list-group-item">Money = <?= $user->getMoney() ?></li>
-                                            <li class="list-group-item">Coefficient = <?= $user->getLevel() ?></li>
-                                            <li class="list-group-item">Coefficient = <?= $moneyConvert ?></li>
+                                            <li class="list-group-item">Coefficient = <?= $levelUser->getCoefficient() ?></li>
+                                            <li class="list-group-item">Coefficient = <?= $user->getPoints() ?></li>
                                             <li class="list-group-item">
                                             	<form action="/convert" method="POST">
                                             		<input type="text" name="point">
                                             		<input type="submit" name="">
                                             	</form>
                                             </li>
+                                            <li class="list-group-item"><a class="btn btn-outline-warning" href="/user">Back</a></li>
                                         </ul>
                                     </div>
                                 </div>
