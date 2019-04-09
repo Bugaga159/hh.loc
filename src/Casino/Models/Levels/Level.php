@@ -5,8 +5,8 @@ namespace Casino\Models\Levels;
 use Casino\Models\ActiveRecordEntity;
 class Level extends ActiveRecordEntity
 {
-    private $title;
-    private $coefficient;
+    protected $title;
+    protected $coefficient;
 
     public function getTitle(): string
     {

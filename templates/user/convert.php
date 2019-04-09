@@ -37,6 +37,7 @@
       <h5 class="my-0 mr-md-auto font-weight-normal"><a href="/">Casino</a></h5>
        <a class="btn btn-outline-success" href="signIn">Sign in</a>
       <a class="btn btn-outline-warning" href="signUp">Sign up</a>
+    <a class="btn btn-outline-warning" href="/">Back</a>
 </div>
 
 
@@ -106,15 +107,15 @@
 
                                     <div class="col-xs-12 col-sm-8">
                                         <ul class="list-group">
-                                            <li class="list-group-item"><?= $user->getNikename() ?></li>
-                                            <li class="list-group-item">Level - <?= $user->getLevel() ?> </li>
-                                            <li class="list-group-item">Money: <?= $user->getMoney() ?>
-                                                <?php if($user->getMoney() == 0):  ?>
-                                                    <a class="btn btn-outline-success" href="/convert">Convert</a>
-                                                <?php endif; ?>
+                                            <li class="list-group-item">Money = <?= $user->getMoney() ?></li>
+                                            <li class="list-group-item">Coefficient = <?= $user->getLevel() ?></li>
+                                            <li class="list-group-item">Coefficient = <?= $moneyConvert ?></li>
+                                            <li class="list-group-item">
+                                            	<form action="/convert" method="POST">
+                                            		<input type="text" name="point">
+                                            		<input type="submit" name="">
+                                            	</form>
                                             </li>
-                                            <li class="list-group-item">Points: <?= $user->getPoints() ?></li>
-                                            <li class="list-group-item"><i class="fa fa-envelope"></i> <?= $user->getEmail() ?></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -126,7 +127,17 @@
 
                 </div>
             </div>
-            <a class="btn btn-outline-warning" href="/">Back</a>
+
         </div>
 
-    <?php include __DIR__ . '/../footer.php'; ?>
+    </div>
+</div>
+</main>
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+        <p>&copy; 2017-2019</p>
+      </div>
+    </footer>
+
+</body>
+</html>

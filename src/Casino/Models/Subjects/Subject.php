@@ -6,8 +6,8 @@ use Casino\Models\ActiveRecordEntity;
 
 class Subject extends ActiveRecordEntity
 {
-    private $title;
-    private $amount;
+    protected $title;
+    protected $amount;
 
     public function getTitle(): string
     {

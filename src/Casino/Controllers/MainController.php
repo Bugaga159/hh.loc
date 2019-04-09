@@ -48,4 +48,16 @@ class MainController
         $this->view->renderHtml('main/main.php', ['userId' => $user, 'number' => $number]);
 
     }
+
+    public function prize()
+    {
+       $subjects = Subject::findAll();
+       
+       if($subjects === null){
+            $this->view->renderHtml('errors/404.php', [], 404);
+            return;
+       } 
+
+       $this->view->renderHtml('main/prize.php', ['subjects' => $subjects]);
+    }
 }

@@ -6,15 +6,15 @@ use Casino\Models\ActiveRecordEntity;
 
 class User extends ActiveRecordEntity
 {
-	private $nikename;
-	private $email;
-	private $isConfirmed;
-	private $role;
-	private $points;
-	private $money;
-	private $idLevel;
-	private $passwordHash;
-	private $authToken;
+	protected $nikename;
+	protected $email;
+	protected $isConfirmed;
+	protected $role;
+	protected $points;
+	protected $money;
+	protected $idLevel;
+	protected $passwordHash;
+	protected $authToken;
 
 
 	public function getNikename(): string
@@ -47,7 +47,7 @@ class User extends ActiveRecordEntity
 		return $this->money;
 	}
 
-	public function getLevel(): string
+	public function getLevel()
 	{
 		return $this->idLevel;
 	}
@@ -55,6 +55,11 @@ class User extends ActiveRecordEntity
     protected static function getTableName(): string
     {
         return 'users';
+    }
+
+    public function setNikename(string $newNikename)
+    {
+    	return $this->nikename = $newNikename;
     }
 
 }
