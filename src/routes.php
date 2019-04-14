@@ -1,6 +1,7 @@
 <?php
 
 return [
+    '~^admin$~' => [\Casino\Controllers\AdminController::class, 'main'],
 	'~^convert$~' => [\Casino\Controllers\UsersController::class, 'convertMoney'],
 	'~^user/(\d+)/edit$~' => [\Casino\Controllers\UsersController::class, 'edit'],
 	'~^user$~' => [\Casino\Controllers\UsersController::class, 'userInfo'],

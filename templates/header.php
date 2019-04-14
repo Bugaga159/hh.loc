@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
 
-    <title>Pricing example · Bootstrap</title>
+    <title>Casino</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sticky-footer/">
 
@@ -31,14 +31,22 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="/css/style.css" rel="stylesheet">
-  </head>
-  <body class="d-flex flex-column h-100">
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <h5 class="my-0 mr-md-auto font-weight-normal"><a href="/">Casino</a></h5>
+    </head>
+    <body class="d-flex flex-column h-100">
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+            <h5 class="my-0 mr-md-auto font-weight-normal"><a href="/">Casino</a></h5>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class=" nav-link btn btn-outline-success" href="signIn">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-warning" href="signUp">Sign up</a>
+                </li>
+            </ul>
 
-      <a class="btn btn-outline-success" href="signIn">Sign in</a>
-      <a class="btn btn-outline-warning" href="signUp">Sign up</a>
-    </div>
+
+
+        </div>
 
 
 <main role="main" class="flex-shrink-0">

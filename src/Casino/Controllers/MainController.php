@@ -28,24 +28,24 @@ class MainController
         }
 
 
-    	if(!empty($_POST) and $_POST['prize'] == 'Play'){
-    		$prizes = ['Money', 'Point', 'Subject'];
-    		$numberPrize = rand(0,2);
-    		switch ($prizes[$numberPrize]) {
-    			case 'Subject':
-    				$numberSubject = rand(0, count($subjects)-1);
-    				$number = '1 ' . $subjects[$numberSubject]->getTitle();
-    				break;
-    			case 'Money':
-    				$number = rand(50,300) . '$';
-    				break;
-    			default:
-    				$number = 'Points ' . rand(100,1000);
-    				break;
- 			      }
+    	if(!empty($_POST) and $_POST['prize'] == 'Play') {
+            $prizes = ['Money', 'Point', 'Subject'];
+            $numberPrize = rand(0, 2);
+            switch ($prizes[$numberPrize]) {
+                case 'Subject':
+                    $numberSubject = rand(0, count($subjects) - 1);
+                    $number = '1 ' . $subjects[$numberSubject]->getTitle();
+                    break;
+                case 'Money':
+                    $number = rand(50, 300) . '$';
+                    break;
+                default:
+                    $number = 'Points ' . rand(100, 1000);
+                    break;
+            }
 
-  	     }
-        $this->view->renderHtml('main/main.php', ['userId' => $user, 'number' => $number]);
+        }
+            $this->view->renderHtml('main/main.php', ['userId' => $user, 'number' => $number]);
 
     }
 
