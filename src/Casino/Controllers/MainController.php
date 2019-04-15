@@ -9,19 +9,24 @@ use Casino\View\View;
 class MainController
 {
     private $view;
-    private $db;
 
+    /**
+     * MainController constructor.
+     */
     public function __construct()
     {
         $this->view = new View(__DIR__ . '/../../../templates');
     }
 
+    /**
+     * Prize processing page
+     *
+     */
     public function main()
     {
         $idUser = 1;
         $user = User::getById($idUser);
         $subjects = Subject::findAll();
-
         if ($user === null or $subjects === null) {
             $this->view->renderHtml('errors/404.php', [], 404);
             return;
@@ -49,6 +54,9 @@ class MainController
 
     }
 
+    /**
+     * List of prizes
+     */
     public function prize()
     {
        $subjects = Subject::findAll();

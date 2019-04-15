@@ -63,6 +63,9 @@ class UsersController
 
     }
 
+    /**
+     * @param int $userId
+     */
     public function edit(int $userId): void
     {
         $userConf = User::getById($this->userId);

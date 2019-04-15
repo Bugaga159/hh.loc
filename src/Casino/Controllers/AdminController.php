@@ -11,15 +11,22 @@ use Casino\Models\Levels\Level;
 class AdminController
 {
     private $view;
-
     private $users;
     private $levels;
+
+    /**
+     * AdminController constructor.
+     */
     public function __construct()
     {
         $this->view = new View(__DIR__ . '/../../../templates');
         $this->users = User::findAll();
+        $this->levels = Level::findAll();
     }
 
+    /**
+     * Main page Admin
+     */
     public function main()
     {
         $levelUser = Level::findAll();
@@ -34,5 +41,13 @@ class AdminController
         }
 
         $this->view->renderHtml('admin/admin.php',['users'=> $this->users, 'levels' => $this->levels]);
+    }
+
+    public function editUser(int $userId): void
+    {
+        $user = User::getById($userId);
+        $levelUser = Level::getById($user->getLevel());
+
+        $this->view->renderHtml('admin/editUser.php',['user' => $user, 'levels' => $this->levels, 'levelUser' => $levelUser]);
     }
 }

@@ -62,6 +62,9 @@ abstract class ActiveRecordEntity
         return $entities ? $entities[0] : null;
     }
 
+    /**
+     * Save in DB
+     */
     public function save(): void
     {
         $mappedProperties = $this->mapPropertiesToDbFormat();
@@ -72,6 +75,9 @@ abstract class ActiveRecordEntity
         }
     }
 
+    /**
+     * @param array $mappedProperties
+     */
     private function update(array $mappedProperties): void
     {
         $columns2params = [];
@@ -88,6 +94,10 @@ abstract class ActiveRecordEntity
         $db->query($sql, $params2values, static::class);
     }
 
+    /**
+     *  Insert in DB
+     * @param array $mappedProperties
+     */
     private function insert(array $mappedProperties): void
     {
         $filteredProperties = array_filter($mappedProperties);
@@ -111,6 +121,22 @@ abstract class ActiveRecordEntity
         $db->query($sql, $params2values, static::class);
     }
 
+    /**
+     * Delete in DB
+     */
+    public function delete(): void
+    {
+        $db = Db::getInstance();
+        $db->query(
+            'DELETE FROM `' . static::getTableName() . '` WHERE id = :id',
+            [':id' => $this->id]
+        );
+        $this->id = null;
+    }
+
+    /**
+     * @return array
+     */
     private function mapPropertiesToDbFormat(): array
     {
         $reflector = new \ReflectionObject($this);
@@ -126,6 +152,10 @@ abstract class ActiveRecordEntity
         return $mappedProperties;
     }
 
+    /**
+     * @param string $source
+     * @return string
+     */
     private function camelCaseToUnderscore(string $source): string
     {
         return strtolower(preg_replace('/(?<!^)[A-Z]/', '_$0', $source));

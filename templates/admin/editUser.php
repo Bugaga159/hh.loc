@@ -128,40 +128,63 @@
 
             <h2>Admin panel</h2>
             <div class="table-responsive">
-                <table class="table table-striped table-sm">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Nikename</th>
-                        <th>Last name</th>
-                        <th>First name</th>
-                        <th>Level</th>
-                        <th>Money</th>
-                        <th>Points</th>
-                        <th>Edit</th>
-                        <th>Orders</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php foreach( $users as $user): ?>
-                    <tr>
-                        <td><?= $user->getId() ?></td>
-                        <td><?= $user->getNikename() ?></td>
-                        <td><?= $user->getLastName() ?></td>
-                        <td><?= $user->getFirstName() ?></td>
-                        <td><?= $levels[$user->getId()]?></td>
-                        <td><?= $user->getMoney() ?></td>
-                        <td><?= $user->getPoints() ?></td>
-                        <td>
-                            <a  href="/admin/<?= $user->getId() ?>/edit/user" class="btn btn-info btn-block" role="button" aria-pressed="true">Edit</a >
-                        </td>
-                        <td>
-                            <a  href="/admin/<?= $user->getId() ?>/orders" class="btn btn-success btn-block" role="button" aria-pressed="true">Orders</a >
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                    </tbody>
-                </table>
+                <form action="" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputFirstName">First name</label>
+                            <input type="text" class="form-control" id="inputFirstName" placeholder="<?=$user->getFirstName() ?>">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputLastName">Last name</label>
+                            <input type="text" class="form-control" id="inputLastName" placeholder="<?=$user->getLastName() ?>">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="<?=$user->getEmail() ?>">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Nikename</label>
+                            <input type="text" class="form-control" id="inputPassword4" placeholder="<?=$user->getNikename() ?>">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="inputState">Role: <?=$user->getRole() ?></label>
+                            <select id="inputState" class="form-control">
+                                <option>admin</option>
+                                <option>user</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputState">Level: <?=$levelUser->getTitle() ?></label>
+                            <select id="inputState" class="form-control">
+                                <?php foreach($levels as $level):?>
+                                    <option><?=$level->getTitle() ?></option>
+                                <?php endforeach;?>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputMoney">Money: <?=$user->getMoney() ?></label>
+                            <input type="number" class="form-control" id="inputMoney" placeholder="Money">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputPoints">Points: <?=$user->getPoints() ?></label>
+                            <input type="number" class="form-control" id="inputPoints" placeholder="Points">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Check me out
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a href="/admin" role="button" aria-pressed="true" class="btn btn-danger">Bake</a>
+                </form>
             </div>
         </main>
     </div>

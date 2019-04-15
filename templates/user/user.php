@@ -52,7 +52,7 @@
 
         <div class="conf">
             <header class="page-header">
-                <h1 class="page-title"><?= $user->getNikename() ?></h1>
+                <h1 class="page-title"><?=$user->getLastName() ?> <?=$user->getFirstName() ?></h1>
                 <small> <i class="fa fa-clock-o"></i> Last Updated on: <time> April 02, 2019</time></small>
             </header>
             <div class="row">

@@ -109,7 +109,7 @@
                                         <ul class="list-group">
                                             <li class="list-group-item">Money = <?= $user->getMoney() ?></li>
                                             <li class="list-group-item">Coefficient = <?= $levelUser->getCoefficient() ?></li>
-                                            <li class="list-group-item">Coefficient = <?= $user->getPoints() ?></li>
+                                            <li class="list-group-item">Points = <?= $user->getPoints() ?></li>
                                             <li class="list-group-item">
                                             	<form action="/convert" method="POST">
                                             		<input type="text" name="point">

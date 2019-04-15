@@ -1,14 +1,15 @@
 <?php include __DIR__ . '/../header.php'; ?>
 
-  <h1>Welcome to the casino <a href="/user"><?= $userId->getNikename() ?></a></h1>
+  <h1>Welcome to the casino <a href="/user"><?=$userId->getLastName() ?> <?=$userId->getFirstName() ?></a></h1>
   <h3>You have $<?= $userId->getMoney()?> and point <?= $userId->getPoints()?>.</h3>
+
   <?php if($number != null): ?>
-    <h2>You win <?= $number ?> <a class="btn btn-outline-danger" href="/">Refuse</a><a class="btn btn-outline-success" href="/user">Get</a></h2>
-    <?php unset($number);?>
+    <h2>You win <?= $number?> <a class="btn btn-outline-danger" href="/">Refuse</a><a class="btn btn-outline-success" href="/user">Get</a></h2>
+    <?php $number = null;?>
     
     
   <?php endif; ?>
-    <form action="" method="POST">
+    <form action="/" method="POST">
         <div class="form-group">
             <button type="submite" class="btn btn-success btn-block" name= 'prize' value='Play'>Play</button>
         </div>
